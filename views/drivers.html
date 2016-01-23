@@ -1,0 +1,25 @@
+<input type="text" ng-model="nameFilter" placeholder="Search...">
+<h4>.. {{nameFilter}} ..</h4>
+
+<table>
+    <thead>
+    <tr><th colspan="4">Drivers Championship Standings</th></tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="asdf in driversList | filter: nameFilter">
+        <td> {{$index + 1}} </td>
+        <td>
+            <img src="img/flags/{{asdf.Driver.nationality}}.png">
+
+            <a href="#/drivers/{{asdf.Driver.driverId}}">
+                {{asdf.Driver.givenName}}&nbsp;{{asdf.Driver.familyName}}
+            </a>
+
+            {{asdf.Driver.givenName}}&nbsp;{{asdf.Driver.familyName}}
+        </td>
+        <td> {{ asdf.Constructor[0].name }} </td>
+        <td> {{ asdf.points }} </td>
+    </tr>
+    </tbody>
+</table>
+
